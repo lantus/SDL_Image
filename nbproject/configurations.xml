@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="79">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <df name="SDL_image-1.2.10" root=".">
+      <df name="acinclude">
+      </df>
+      <in>IMG.c</in>
+      <in>IMG_ImageIO.c</in>
+      <in>IMG_UIImage.m</in>
+      <in>IMG_bmp.c</in>
+      <in>IMG_gif.c</in>
+      <in>IMG_jpg.c</in>
+      <in>IMG_lbm.c</in>
+      <in>IMG_pcx.c</in>
+      <in>IMG_png.c</in>
+      <in>IMG_pnm.c</in>
+      <in>IMG_tga.c</in>
+      <in>IMG_tif.c</in>
+      <in>IMG_xcf.c</in>
+      <in>IMG_xpm.c</in>
+      <in>IMG_xv.c</in>
+      <in>IMG_xxx.c</in>
+      <in>SDL_image.h</in>
+    </df>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false"
+                   kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>Makefile.xenon</itemPath>
+    </logicalFolder>
+  </logicalFolder>
+  <sourceFolderFilter>^(nbproject)$</sourceFolderFilter>
+  <sourceRootList>
+    <Elem>.</Elem>
+  </sourceRootList>
+  <projectmakefile>Makefile.xenon</projectmakefile>
+  <confs>
+    <conf name="Default" type="0">
+      <toolsSet>
+        <remote-sources-mode>LOCAL_SOURCES</remote-sources-mode>
+        <compilerSet>default</compilerSet>
+      </toolsSet>
+      <makefileType>
+        <makeTool>
+          <buildCommandWorkingDir>.</buildCommandWorkingDir>
+          <buildCommand>${MAKE} -f Makefile.xenon</buildCommand>
+          <cleanCommand>${MAKE} -f Makefile.xenon clean</cleanCommand>
+          <executablePath></executablePath>
+        </makeTool>
+      </makefileType>
+    </conf>
+  </confs>
+</configurationDescriptor>
