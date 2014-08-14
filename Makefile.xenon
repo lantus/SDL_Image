@@ -7,7 +7,7 @@ AR	= xenon-ar
 AS	= xenon-as
 RANLIB	= xenon-ranlib
 
-CFLAGS=$(INCLUDE) -ffunction-sections -fdata-sections  -mno-altivec -mhard-float -mcpu=cell -mtune=cell -m32 -fno-pic -mpowerpc64 -DXENON -DLOAD_PNG -DLOAD_BMP -DLOAD_GIF -DLOAD_LBM -DLOAD_PCX -DLOAD_PNM -DLOAD_TGA -DLOAD_XCF -DLOAD_XPM -DLOAD_XV -I$(DEVKITXENON)/usr/include/ -I$(DEVKITXENON)/usr/include/SDL/
+CFLAGS=$(INCLUDE) -ffunction-sections -fdata-sections  -mno-altivec -mhard-float -mcpu=cell -mtune=cell -m32 -fno-pic -mpowerpc64 -DXENON -DLOAD_PNG -DLOAD_BMP -DLOAD_GIF -DLOAD_LBM -DLOAD_PCX -DLOAD_PNM -DLOAD_TGA -DLOAD_XCF -DLOAD_XPM -DLOAD_XV -I/usr/xenon/include/ -I/usr/xenon/include/SDL/
 
 TARGET  = libSDL_image.a
 SOURCES = \
@@ -31,6 +31,12 @@ $(TARGET): $(CONFIG_H) $(OBJECTS)
 clean:
 	rm -f $(TARGET) $(OBJECTS)
 
-install: all		
-	cp -r *.h $(DEVKITXENON)/usr/include/SDL/ 
-	cp $(TARGET) $(DEVKITXENON)/usr/lib/$(TARGET)
+#install: all		
+#	cp -r *.h /usr/xenon/include/SDL/ 
+#	cp $(TARGET) /usr/xenon/lib/$(TARGET)
+
+install: all
+	test -d $(DESTDIR)/$(PREFIX)/include/SDL/ || mkdir -p $(DESTDIR)/$(PREFIX)/include/SDL/
+	test -d $(DESTDIR)/$(PREFIX)/lib/ || mkdir -p $(DESTDIR)/$(PREFIX)/lib/
+	cp -r *.h $(DESTDIR)/$(PREFIX)/include/SDL/
+	install -m 664 $(TARGET) $(DESTDIR)/$(PREFIX)/lib/$(TARGET)
